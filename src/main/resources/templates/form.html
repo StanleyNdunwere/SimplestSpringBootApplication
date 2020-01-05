@@ -3,17 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <title>Form</title>
+        <style>
+            .error{
+                color: red;
+            }
+        </style>
     </head>
     <body>
         <form method="POST" th:action = "@{/show-form/process-form}" th:object = "${user}">
             <h3>Enter Your Name</h3>
-            <input type="text" required size="100" name = "name"/>
+            <input type="text" required size="100" name = "name" th:value = "*{name}"/>
+            <p th:if ="${#fields.hasErrors('name')}" th:errors = "*{name}" class = "error"></p>
             <h3>Enter Your Email</h3>
-            <input type="text" required size="100" name = "email"/>
+            <input type="text" required size="100" name = "email" th:value = "*{email}" />
+            <p th:if = "${#fields.hasErrors('email')}" th:errors =  "*{email}" class = "error"></p>
             <h3>Enter Your Address</h3>
-            <input type="text" required size="100" name = "address"/>
+            <input type="text" required size="100" name = "address" th:value = "*{address}"/>
+            <p th:if = "${#fields.hasErrors('address')}" th:errors = "*{address}" class = "error"></p>
             <h3>Enter Your PostCode</h3>
-            <input type="text" required size="100" name = "postcode"/>
+            <input type="text" required size="100" name = "postcode" th:value = "*{postcode}"/>
+            <p th:if = "${#fields.hasErrors('postcode')}" th:errors = "*{postcode}" class = "error"></p>
             <br />
             <button type="submit" th:text = "|Submit Your Data|"></button>
         </form>
