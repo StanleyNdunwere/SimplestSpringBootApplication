@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>Filled Form</title>
+    </head>
+    <body>
+        <h1>Thanks for filling our your details...</h1>
+        <h2>Below is a summary of the information we received</h2>
+        <p th:text = "|Your Name: ${name}|"></p>
+        <p th:text = "|Your Email: ${email}|"></p>
+        <p th:text = "|Your Address: ${address}|"></p>
+        <p th:text = "|Your Postcode: ${postcode}|"></p>
+    </body>
+</html>

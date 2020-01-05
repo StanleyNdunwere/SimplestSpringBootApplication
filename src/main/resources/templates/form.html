@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>Form</title>
+    </head>
+    <body>
+        <form method="POST" th:action = "@{/show-form/process-form}" th:object = "${user}">
+            <h3>Enter Your Name</h3>
+            <input type="text" required size="100" name = "name"/>
+            <h3>Enter Your Email</h3>
+            <input type="text" required size="100" name = "email"/>
+            <h3>Enter Your Address</h3>
+            <input type="text" required size="100" name = "address"/>
+            <h3>Enter Your PostCode</h3>
+            <input type="text" required size="100" name = "postcode"/>
+            <br />
+            <button type="submit" th:text = "|Submit Your Data|"></button>
+        </form>
+    </body>
+</html>
