@@ -40,6 +40,7 @@ public class ShowFormController {
             model.addAttribute("email", userDetails.getEmail());
             model.addAttribute("postcode", userDetails.getPostcode());
             model.addAttribute("address", userDetails.getAddress());
+            model.addAttribute("countryCode" , userDetails.getCountryCode());
             return "confirmation-page";
         }
     }

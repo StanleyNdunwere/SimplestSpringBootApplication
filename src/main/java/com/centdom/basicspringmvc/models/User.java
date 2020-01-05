@@ -1,5 +1,6 @@
 package com.centdom.basicspringmvc.models;
 
+import com.centdom.basicspringmvc.annotationsInterfaces.BeginsWith;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.NumberFormat;
@@ -34,6 +35,10 @@ public class User {
     @Length(min = 3, message = "Enter a valid email address")
     private String email;
 
+    @NotEmpty
+    @NotNull
+    @BeginsWith(startsWith = "npr", message = "must begin with npr")
+    private String countryCode;
 
 }
 
